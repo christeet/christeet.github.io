@@ -23,7 +23,7 @@ p { line-height:1.6; margin:0; }
 .price-box-sub { font-size:1.1rem; font-weight:600; color:var(--purple); margin-top:14px; margin-bottom:10px; }
 .price-list { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:10px 26px; align-items:center; }
 .price-item { color:var(--ink); line-height:1.5; }
-.price-value { justify-self:end; color:var(--purple); font-weight:700; white-space:nowrap; }
+.price-value { justify-self:end; color:var(--purple); font-weight:700; white-space:nowrap; min-width:11ch; text-align:right; font-variant-numeric:tabular-nums; }
 .price-note { margin-top:14px; font-style:italic; color:var(--muted); }
 .inline-note { margin-top:8px; color:var(--muted); font-size:.96rem; }
 .info-box p + p { margin-top:18px; }
@@ -32,7 +32,7 @@ p { line-height:1.6; margin:0; }
 @media (max-width:700px) {
 .container { width:92%; } .hero { padding-top:50px; } .hero-image { width:92%; }
 .price-box { padding:22px 18px; } .price-list { grid-template-columns:1fr; gap:4px; }
-.price-value { justify-self:start; margin-bottom:10px; }
+.price-value { justify-self:start; margin-bottom:10px; min-width:0; text-align:left; }
 }
 </style>
 </head>
@@ -48,13 +48,13 @@ p { line-height:1.6; margin:0; }
 <p><strong>Emmental - Bern-Mittelland - Berner Oberland - Oberaargau - Seeland</strong></p>
 <p>Ich komme gerne zu dir und deinem Pferd in den Stall. Gerne darfst du für die Dorn-Breuss-Therapie oder eine kinesiologische Behandlung auch zu mir nach Hause kommen. Ich rechne die Fahrkosten pauschal und nicht nach Kilometer ab. Bei mehreren Terminen im gleichen Stall am gleichen Tag werden die Kosten selbstverständlich aufgeteilt.</p>
 <h3>Was erwartet dich</h3>
-<p>Ich stelle diverse Fragen (Aufzucht, Alter, Rasse, Fütterung, Haltung, Verwendung, Vorerkrankungen, akute Probleme/Auffälligkeiten, etc.), schaue das Pferd inkl. Hufsituation in der Bewegung im Schritt und Trab (wenn möglich, auf hartem und weichem Boden, geradeaus und auf der Kreislinie) an, allenfalls auch geritten, führe Sicht- und Tastbefunde der Muskulatur und Funktionstestungen der Gelenke durch, so dass ich mir ein Gesamtbild machen kann. Danach erfolgt die eigentliche Behandlung.</p>
+<p>Ich stelle diverse Fragen (Aufzucht, Alter, Rasse, Fütterung, Haltung, Verwendung, Vorerkrankungen, akute Probleme/Auffälligkeiten, etc.), schaue das Pferd inkl. Hufsituation in der Bewegung im Schritt und Trab (wenn möglich, auch im kurzen und weichen Boden, geradeaus und auf der Kreislinie) an, alle möglichen Informationen werden vorher gesammelt und danach in meinen Behandlungsplan übernommen.</p>
 <p>Die Termine dauern durchschnittlich zwischen 1 bis 2 Stunden.</p>
 <p>Bei Bedarf fasse ich dir alles in einem Fachbericht zusammen (wird separat verrechnet).</p>
 <p>Im besten Fall führst du die von mir gezeigten physiotherapeutischen Übungen regelmässig aus und wir erarbeiten gemeinsam einen Trainingsplan.</p>
-<p>Auch deine Körperhaltung, allfällige Vorerkrankungen im Bewegungsapparat oder bekannte Problematiken sind wichtig für mein Gesamtbild, denn der Mensch überträgt allfällige Fehlhaltungen auf das Pferd (und umgekehrt ebenfalls). Daher schaue ich in der Regel auch den Reiter, wenn auch nur grob, an. Hier könnte ich dir mit der Dorn-Breuss-Therapie sicher weiterhelfen. Diese sanfte Therapieform an der Wirbelsäule beinhaltet unter anderem auch die Beinlängenkorrektur und die Behandlung von Beckenschiefständen.</p>
-<p>Jedes Pferd und jeder Mensch ist individuell. Daher arbeite ich nicht nach Schema X, sondern schaue, was der Körper gerade benötigt und zulässt. Dein Pferd bestimmt, was geht und was nicht. Genau so wie du auch. Es kann durchaus sein, dass ich diverse Techniken/Behandlungen kombiniere oder nur eine bestimmte anwende.</p>
-<p>Du kannst von mir seriöse, zuverlässige, genaue und fundierte Arbeit erwarten. Bitte hab aber Verständnis dafür, dass ich keine Diagnosen stelle. Sollte bei einem Pferd aus meiner Sicht ein Tierarzt beigezogen werden, sage ich das offen und ehrlich.</p>
+<p>Auch deine Körperhaltung, allfällige Vorerkrankungen im Bewegungsapparat oder bekannte Problematiken sind wichtig für mein Gesamtbild, denn der Mensch überträgt allfällige Fehlhaltungen auf das Pferd (und umgekehrt ebenfalls). Daher schaue ich mir der Regel nach auch dich und dein Reiten an, damit wir in der Behandlung arbeiten und damit du mit deiner Haltung oder deinen Bewegungen auf dein Pferd besser Einfluss nehmen kannst.</p>
+<p>Jedes Pferd und jeder Mensch ist individuell. Daher arbeite ich nicht nach Schema X, sondern schaue, was der Körper gerade benötigt und zulässt. Dein Pferd bestimmt, was geht und was nicht. Genau so wird auch die Behandlung gehandhabt, denn der Körper meldet sich und zeigt seinen Bedarf. Es kann durchaus sein, dass ich diverse Techniken/Kombinationen kombiniere oder nur eine bestimmte Behandlung anwendet.</p>
+<p>Du kannst von mir seriöse, zuverlässige, genaue und fundierte Arbeit erwarten. Bitte hab aber Verständnis dafür, dass ich keine Diagnosen stelle. Sollte bei einem Pferd aus meiner Sicht ein Tierarzt beigezogen werden, sage ich es dir natürlich.</p>
 <p>Auch ein Blick auf das Equipment (Sattel und Trense/Zaum) gehört zu meiner Behandlung dazu.</p>
 <p>Ich freue mich, dein Pferd und dich kennen zu lernen und euch Gutes zu tun. Melde dich zur Terminvereinbarung am besten per WhatsApp oder ruf mich an.</p>
 <p>Herzlichst, eure Martina - EquiSpina</p>
@@ -79,7 +79,7 @@ p { line-height:1.6; margin:0; }
 <div class="price-box"><div class="price-box-sub">Taping</div><p><strong>Ab CHF 40.00</strong>: nach Aufwand und Verbrauch von Material</p></div>
 <div class="price-box"><div class="price-box-sub">Tierkommunikation</div><p><strong>Ab CHF 40.00</strong>: nach Aufwand</p><p class="inline-note">(nicht nur für dein Pferd natürlich)</p></div>
 <div class="price-box"><h3>Für dein Pferd und dich</h3><div class="price-box-sub">Pferdeosteopathie und Dorn-Breuss-Therapie (Kombi)</div><div class="price-list"><div class="price-item">bis 20 km Fahrweg</div><div class="price-value">CHF 220.00</div><div class="price-item">Nachkontrolle innert 12 Wochen</div><div class="price-value">CHF 200.00</div><div class="price-item">bis 30 km Fahrweg</div><div class="price-value">CHF 230.00</div><div class="price-item">Nachkontrolle innert 12 Wochen</div><div class="price-value">CHF 210.00</div><div class="price-item">bis 40 km Fahrweg</div><div class="price-value">CHF 240.00</div><div class="price-item">Nachkontrolle innert 12 Wochen</div><div class="price-value">CHF 220.00</div><div class="price-item">ab 50 km Fahrweg</div><div class="price-value">CHF 250.00</div><div class="price-item">Nachkontrolle innert 12 Wochen</div><div class="price-value">CHF 230.00</div><div class="price-item">für die Erstellung eines Fachberichts</div><div class="price-value">CHF 40.00</div></div></div>
-<div class="price-box"><div class="price-box-sub">Cranio-Sacral-Therapie, Kinesiologie sowie weitere Therapieformen</div><p>Myofasziales Strömen, Diaphragma, Lymphdrainage etc., als Einzeltherapie angewandt:</p><div class="price-list" style="margin-top:14px;"><div class="price-item">bis 20 km Fahrweg</div><div class="price-value">CHF 100.00</div><div class="price-item">bis 30 km Fahrweg</div><div class="price-value">CHF 110.00</div><div class="price-item">bis 40 km Fahrweg</div><div class="price-value">CHF 120.00</div><div class="price-item">ab 50 km Fahrweg</div><div class="price-value">CHF 130.00</div><div class="price-item">für die Erstellung einer kurzen Zusammenfassung</div><div class="price-value">CHF 20.00</div></div></div>
+<div class="price-box"><div class="price-box-sub">Cranio-Sacral-Therapie, Kinesiologie sowie weitere Therapieformen</div><p>Myofasziales Strömen, Diaphragma, Lymphdrainage etc., als Einzeltherapie angewandt:</p><div class="price-list" style="margin-top:14px;"><div class="price-item">bis 20 km Fahrweg</div><div class="price-value">CHF 100.00</div><div class="price-item">bis 30 km Fahrweg</div><div class="price-value">CHF 110.00</div><div class="price-item">bis 40 km Fahrweg</div><div class="price-value">CHF 120.00</div><div class="price-item">ab 50 km Fahrweg</div><div class="price-value">CHF 130.00</div><div class="price-item">für die Erstellung eines Kurz- oder Zusatzauftrags</div><div class="price-value">CHF 20.00</div></div></div>
 <div class="price-box"><div class="price-box-sub">Bachblütenmischungen (kinesiologisch ausgetestet)</div><p><strong>Ab CHF 20.00</strong> und auf Anfrage</p></div>
 <div class="price-box"><h3>Für dich</h3><div class="price-box-sub">Dorn-Breuss-Therapie</div><div class="price-list"><div class="price-item">bei mir zu Hause</div><div class="price-value">CHF 90.00</div><div class="price-item">bei dir zu Hause</div><div class="price-value">CHF 100.00 bis CHF 130.00</div></div><p class="inline-note">(je nach Fahrweg)</p></div>
 </section>
