@@ -6,102 +6,150 @@
 <title>EquiSpina</title>
 
 <style>
+:root {
+    --bg: #f7f4f8;
+    --panel: #ffffff;
+    --ink: #3f2a5a;
+    --purple: #4b2c6f;
+    --purple-soft: #6b4a8f;
+    --muted: #6b5a84;
+    --line: rgba(75, 44, 111, 0.12);
+    --shadow: 0 2px 10px rgba(75, 44, 111, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    font-family: "Helvetica Neue", sans-serif;
-    background: #f7f4f8;
-    color: #3f2a5a;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+}
+
+img {
+    max-width: 100%;
+    display: block;
 }
 
 .container {
     width: 90%;
     max-width: 1100px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 h1, h2, h3 {
-    font-family: "Georgia", serif;
-    color: #4b2c6f;
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--purple);
+    margin: 0;
 }
 
 h1 {
-    font-size: clamp(40px, 10vw, 60px);
-    margin-bottom: 30px;
+    font-size: clamp(42px, 7vw, 76px);
+    margin-bottom: 28px;
+    letter-spacing: 0.02em;
 }
 
 h2 {
-    font-size: 30px;
-    margin-top: 60px;
+    font-size: clamp(30px, 4vw, 42px);
+    margin-bottom: 24px;
 }
 
 h3 {
-    font-size: 22px;
-    margin-top: 0;
+    font-size: 1.4rem;
+    margin-bottom: 16px;
 }
 
 p {
     line-height: 1.6;
+    margin: 0;
 }
 
 .hero {
     text-align: center;
-    padding: 80px 20px 40px;
+    padding: 64px 0 30px;
 }
 
 .hero-image {
-    display: block;
     width: 90%;
-    height: auto;
+    max-width: 1400px;
     margin: 0 auto;
-    border-radius: 12px;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    object-fit: cover;
 }
 
-.section {
-    padding: 40px 0;
+.pricing {
+    padding: 30px 0 80px;
 }
 
-.box {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
+.price-box {
+    background: var(--panel);
+    border-radius: 14px;
+    padding: 28px 26px;
     margin-top: 20px;
-    box-shadow: 0 2px 8px rgba(75, 44, 111, 0.1);
+    box-shadow: var(--shadow);
+}
+
+.price-box h3 {
+    margin-bottom: 18px;
+}
+
+.price-box-sub {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--purple);
+    margin-top: 14px;
+    margin-bottom: 10px;
 }
 
 .price-list {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
-    gap: 14px 30px;
-    align-items: baseline;
+    gap: 10px 26px;
+    align-items: center;
 }
 
-.price-list div:nth-child(odd) {
-    font-weight: 500;
+.price-item {
+    color: var(--ink);
+    line-height: 1.5;
 }
 
-.price {
+.price-value {
+    justify-self: end;
+    color: var(--purple);
+    font-weight: 700;
     white-space: nowrap;
-    font-weight: bold;
-    color: #4b2c6f;
 }
 
-.note {
-    margin-top: 24px;
-    font-size: 15px;
+.price-note {
+    margin-top: 14px;
     font-style: italic;
+    color: var(--muted);
 }
 
-@media (max-width: 600px) {
+.inline-note {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 0.96rem;
+}
+
+@media (max-width: 700px) {
+    .container {
+        width: 92%;
+    }
+
     .hero {
-        padding: 50px 10px 20px;
+        padding-top: 50px;
     }
 
-    .section {
-        padding: 25px 0;
+    .hero-image {
+        width: 92%;
     }
 
-    .box {
-        padding: 22px;
+    .price-box {
+        padding: 22px 18px;
     }
 
     .price-list {
@@ -109,19 +157,12 @@ p {
         gap: 4px;
     }
 
-    .price-list div:nth-child(even) {
-        margin-bottom: 12px;
+    .price-value {
+        justify-self: start;
+        margin-bottom: 10px;
     }
 }
-
-footer {
-    text-align: center;
-    padding: 40px;
-    font-size: 14px;
-    color: #6b5a84;
-}
 </style>
-
 </head>
 
 <body>
@@ -131,87 +172,142 @@ footer {
     <img class="hero-image" src="B8CEBDAD-E145-4C26-8DD6-50A843BD26EF.png" alt="EquiSpina">
 </section>
 
-<main class="container">
-    <section class="section">
+<main class="container pricing">
+    <section>
         <h2>Preise</h2>
 
-        <div class="box">
+        <div class="price-box">
             <h3>Für dein Pferd</h3>
-            <h3>Pferdeosteopathie* inkl. physiotherapeutische Übungen</h3>
+            <div class="price-box-sub">Pferdeosteopathie* inkl. physiotherapeutische Übungen</div>
             <div class="price-list">
-                <div>bis 20 km Fahrweg</div><div class="price">CHF 120.00</div>
-                <div>Nachkontrolle innert 12 Wochen</div><div class="price">CHF 100.00</div>
-                <div>bis 30 km Fahrweg</div><div class="price">CHF 130.00</div>
-                <div>Nachkontrolle innert 12 Wochen</div><div class="price">CHF 110.00</div>
-                <div>bis 40 km Fahrweg</div><div class="price">CHF 140.00</div>
-                <div>Nachkontrolle innert 12 Wochen</div><div class="price">CHF 120.00</div>
-                <div>ab 50 km Fahrweg</div><div class="price">CHF 150.00</div>
-                <div>Nachkontrolle innert 12 Wochen</div><div class="price">CHF 130.00</div>
-                <div>Erstellung eines Fachberichts</div><div class="price">CHF 40.00</div>
+                <div class="price-item">bis 20 km Fahrweg</div>
+                <div class="price-value">CHF 120.00</div>
+
+                <div class="price-item">Nachkontrolle innert 12 Wochen</div>
+                <div class="price-value">CHF 100.00</div>
+
+                <div class="price-item">bis 30 km Fahrweg</div>
+                <div class="price-value">CHF 130.00</div>
+
+                <div class="price-item">Nachkontrolle innert 12 Wochen</div>
+                <div class="price-value">CHF 110.00</div>
+
+                <div class="price-item">bis 40 km Fahrweg</div>
+                <div class="price-value">CHF 140.00</div>
+
+                <div class="price-item">Nachkontrolle innert 12 Wochen</div>
+                <div class="price-value">CHF 120.00</div>
+
+                <div class="price-item">ab 50 km Fahrweg</div>
+                <div class="price-value">CHF 150.00</div>
+
+                <div class="price-item">Nachkontrolle innert 12 Wochen</div>
+                <div class="price-value">CHF 130.00</div>
+
+                <div class="price-item">für die Erstellung eines Fachberichts</div>
+                <div class="price-value">CHF 40.00</div>
             </div>
-            <p class="note">* Darin enthalten sind auch Kombinationen mit anderen Therapieformen.</p>
+            <p class="price-note">* darin enthalten sind auch Kombinationen mit anderen Therapieformen</p>
         </div>
 
-        <div class="box">
-            <h3>Longentraining mit physiotherapeutischen Übungen</h3>
+        <div class="price-box">
+            <div class="price-box-sub">Longentraining mit physiotherapeutischen Übungen</div>
             <div class="price-list">
-                <div>bis 20 km Fahrweg</div><div class="price">CHF 70.00</div>
-                <div>bis 30 km Fahrweg</div><div class="price">CHF 80.00</div>
-                <div>bis 40 km Fahrweg</div><div class="price">CHF 90.00</div>
-                <div>ab 50 km Fahrweg</div><div class="price">CHF 100.00</div>
+                <div class="price-item">bis 20 km Fahrweg</div>
+                <div class="price-value">CHF 70.00</div>
+
+                <div class="price-item">bis 30 km Fahrweg</div>
+                <div class="price-value">CHF 80.00</div>
+
+                <div class="price-item">bis 40 km Fahrweg</div>
+                <div class="price-value">CHF 90.00</div>
+
+                <div class="price-item">ab 50 km Fahrweg</div>
+                <div class="price-value">CHF 100.00</div>
             </div>
         </div>
 
-        <div class="box">
-            <h3>Taping</h3>
+        <div class="price-box">
+            <div class="price-box-sub">Taping</div>
             <p><strong>Ab CHF 40.00</strong>: nach Aufwand und Verbrauch von Material</p>
         </div>
 
-        <div class="box">
-            <h3>Tierkommunikation <small>(nicht nur für dein Pferd natürlich)</small></h3>
+        <div class="price-box">
+            <div class="price-box-sub">Tierkommunikation</div>
             <p><strong>Ab CHF 40.00</strong>: nach Aufwand</p>
+            <p class="inline-note">(nicht nur für dein Pferd natürlich)</p>
         </div>
 
-        <div class="box">
+        <div class="price-box">
             <h3>Für dein Pferd und dich</h3>
-            <h3>Pferdeosteopathie und Dorn-Breuss-Therapie (Kombi)</h3>
+            <div class="price-box-sub">Pferdeosteopathie und Dorn-Breuss-Therapie (Kombi)</div>
             <div class="price-list">
-                <div>bis 20 km Fahrweg</div><div class="price">CHF 220.00</div>
-                <div>Nachkontrolle innert 12 Wochen</div><div class="price">CHF 200.00</div>
-                <div>bis 30 km Fahrweg</div><div class="price">CHF 230.00</div>
-                <div>Nachkontrolle innert 12 Wochen</div><div class="price">CHF 210.00</div>
-                <div>bis 40 km Fahrweg</div><div class="price">CHF 240.00</div>
-                <div>Nachkontrolle innert 12 Wochen</div><div class="price">CHF 220.00</div>
-                <div>ab 50 km Fahrweg</div><div class="price">CHF 250.00</div>
-                <div>Nachkontrolle innert 12 Wochen</div><div class="price">CHF 230.00</div>
-                <div>Erstellung eines Fachberichts</div><div class="price">CHF 40.00</div>
+                <div class="price-item">bis 20 km Fahrweg</div>
+                <div class="price-value">CHF 220.00</div>
+
+                <div class="price-item">Nachkontrolle innert 12 Wochen</div>
+                <div class="price-value">CHF 200.00</div>
+
+                <div class="price-item">bis 30 km Fahrweg</div>
+                <div class="price-value">CHF 230.00</div>
+
+                <div class="price-item">Nachkontrolle innert 12 Wochen</div>
+                <div class="price-value">CHF 210.00</div>
+
+                <div class="price-item">bis 40 km Fahrweg</div>
+                <div class="price-value">CHF 240.00</div>
+
+                <div class="price-item">Nachkontrolle innert 12 Wochen</div>
+                <div class="price-value">CHF 220.00</div>
+
+                <div class="price-item">ab 50 km Fahrweg</div>
+                <div class="price-value">CHF 250.00</div>
+
+                <div class="price-item">Nachkontrolle innert 12 Wochen</div>
+                <div class="price-value">CHF 230.00</div>
+
+                <div class="price-item">für die Erstellung eines Fachberichts</div>
+                <div class="price-value">CHF 40.00</div>
             </div>
         </div>
 
-        <div class="box">
-            <h3>Cranio-Sacral-Therapie, Kinesiologie sowie weitere Therapieformen</h3>
+        <div class="price-box">
+            <div class="price-box-sub">Cranio-Sacral-Therapie, Kinesiologie sowie weitere Therapieformen</div>
             <p>Myofasziales Strömen, Diaphragma, Lymphdrainage etc., als Einzeltherapie angewandt:</p>
-            <div class="price-list">
-                <div>bis 20 km Fahrweg</div><div class="price">CHF 100.00</div>
-                <div>bis 30 km Fahrweg</div><div class="price">CHF 110.00</div>
-                <div>bis 40 km Fahrweg</div><div class="price">CHF 120.00</div>
-                <div>ab 50 km Fahrweg</div><div class="price">CHF 130.00</div>
-                <div>Erstellung einer kurzen Zusammenfassung</div><div class="price">CHF 20.00</div>
+            <div class="price-list" style="margin-top: 14px;">
+                <div class="price-item">bis 20 km Fahrweg</div>
+                <div class="price-value">CHF 100.00</div>
+
+                <div class="price-item">bis 30 km Fahrweg</div>
+                <div class="price-value">CHF 110.00</div>
+
+                <div class="price-item">bis 40 km Fahrweg</div>
+                <div class="price-value">CHF 120.00</div>
+
+                <div class="price-item">ab 50 km Fahrweg</div>
+                <div class="price-value">CHF 130.00</div>
+
+                <div class="price-item">für die Erstellung einer kurzen Zusammenfassung</div>
+                <div class="price-value">CHF 20.00</div>
             </div>
         </div>
 
-        <div class="box">
-            <h3>Bachblütenmischungen (kinesiologisch ausgetestet)</h3>
+        <div class="price-box">
+            <div class="price-box-sub">Bachblütenmischungen (kinesiologisch ausgetestet)</div>
             <p><strong>Ab CHF 20.00</strong> und auf Anfrage</p>
         </div>
 
-        <div class="box">
+        <div class="price-box">
             <h3>Für dich</h3>
-            <h3>Dorn-Breuss-Therapie</h3>
+            <div class="price-box-sub">Dorn-Breuss-Therapie</div>
             <div class="price-list">
-                <div>Bei mir zu Hause</div><div class="price">CHF 90.00</div>
-                <div>Bei dir zu Hause (je nach Fahrweg)</div><div class="price">CHF 100.00 bis CHF 130.00</div>
+                <div class="price-item">bei mir zu Hause</div>
+                <div class="price-value">CHF 90.00</div>
+
+                <div class="price-item">bei dir zu Hause</div>
+                <div class="price-value">CHF 100.00 bis CHF 130.00</div>
             </div>
+            <p class="inline-note">(je nach Fahrweg)</p>
         </div>
     </section>
 </main>
