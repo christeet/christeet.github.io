@@ -2,6 +2,7 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EquiSpina</title>
 
 <style>
@@ -18,19 +19,24 @@ body {
     margin: auto;
 }
 
-h1, h2 {
+h1, h2, h3 {
     font-family: "Georgia", serif;
     color: #4b2c6f;
 }
 
 h1 {
     font-size: clamp(40px, 10vw, 60px);
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 h2 {
     font-size: 30px;
     margin-top: 60px;
+}
+
+h3 {
+    font-size: 22px;
+    margin-top: 0;
 }
 
 p {
@@ -39,27 +45,19 @@ p {
 
 .hero {
     text-align: center;
-    padding: 80px 20px;
+    padding: 80px 20px 40px;
 }
 
-.hero img {
-    width: clamp(200px, 50vw, 350px);
-    margin-bottom: 20px;
-}
-
-.subtitle {
-    font-size: 18px;
-    margin-top: 10px;
-}
-
-.tagline {
-    margin-top: 30px;
-    font-size: 20px;
-    font-style: italic;
+.hero-image {
+    display: block;
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 12px;
 }
 
 .section {
-    padding: 60px 0;
+    padding: 40px 0;
 }
 
 .box {
@@ -70,46 +68,50 @@ p {
     box-shadow: 0 2px 8px rgba(75, 44, 111, 0.1);
 }
 
-.columns {
-    display: flex;
-    gap: 40px;
-    flex-wrap: wrap;
+.price-list {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 14px 30px;
+    align-items: baseline;
 }
 
-.col {
-    flex: 1;
-    min-width: 250px;
+.price-list div:nth-child(odd) {
+    font-weight: 500;
 }
 
-ul {
-    padding-left: 20px;
-}
-
-a {
+.price {
+    white-space: nowrap;
+    font-weight: bold;
     color: #4b2c6f;
-    text-decoration: none;
-    border-bottom: 2px solid #4b2c6f;
-    transition: opacity 0.3s ease;
 }
 
-a:hover {
-    opacity: 0.7;
+.note {
+    margin-top: 24px;
+    font-size: 15px;
+    font-style: italic;
 }
 
-.button {
-    display: inline-block;
-    background: #4b2c6f;
-    color: white;
-    padding: 12px 30px;
-    border-radius: 8px;
-    text-decoration: none;
-    margin-top: 20px;
-    border: none;
-    transition: background 0.3s ease;
-}
+@media (max-width: 600px) {
+    .hero {
+        padding: 50px 10px 20px;
+    }
 
-.button:hover {
-    background: #6b4a8f;
+    .section {
+        padding: 25px 0;
+    }
+
+    .box {
+        padding: 22px;
+    }
+
+    .price-list {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+
+    .price-list div:nth-child(even) {
+        margin-bottom: 12px;
+    }
 }
 
 footer {
@@ -124,108 +126,95 @@ footer {
 
 <body>
 
-<!-- HERO -->
 <section class="hero">
-    <!-- Hier dein Logo einsetzen -->
-    <img src="B8CEBDAD-E145-4C26-8DD6-50A843BD26EF.png" alt="EquiSpina Logo">
-
     <h1>EquiSpina</h1>
-    <div class="subtitle">
-        Pferdeosteopathie • Physiotherapeutisches Training<br>
-        Dorn-Breuss-Therapie • Kinesiologie
-    </div>
-
-    <div class="tagline">
-        Gutes für dein Pferd und dich
-    </div>
+    <img class="hero-image" src="B8CEBDAD-E145-4C26-8DD6-50A843BD26EF.png" alt="EquiSpina">
 </section>
 
-<!-- ÜBER MICH -->
-<section class="section container">
-    <h2>Über mich</h2>
-    <div class="box">
-        <p>
-        Mein Name ist Martina Etter.
-        </p>
+<main class="container">
+    <section class="section">
+        <h2>Preise</h2>
 
-        <p>
-        Seit klein begleitet mich die Leidenschaft für Pferde.  
-        Mich fasziniert ihre Bewegung und ihr Körper – und wie fein alles zusammenspielt.
-        </p>
-
-        <p>
-        Durch eigene Pferde und deren Probleme habe ich die Osteopathie entdeckt.  
-        Gleichzeitig haben mich eigene körperliche Blockaden zur Dorn-Breuss-Therapie geführt.
-        </p>
-
-        <p>
-        Heute verbinde ich diese Ansätze, um Pferd und Mensch ganzheitlich zu begleiten.
-        </p>
-    </div>
-</section>
-
-<!-- ANGEBOTE -->
-<section class="section container">
-    <h2>Angebote</h2>
-
-    <div class="columns">
-        <div class="col box">
+        <div class="box">
             <h3>Für dein Pferd</h3>
-            <ul>
-                <li>Pferdeosteopathie</li>
-                <li>Physiotherapeutisches Training</li>
-                <li>Pferdetaping</li>
-            </ul>
+            <h3>Pferdeosteopathie* inkl. physiotherapeutische Übungen</h3>
+            <div class="price-list">
+                <div>bis 20 km Fahrweg</div><div class="price">CHF 120.00</div>
+                <div>Nachkontrolle innert 12 Wochen</div><div class="price">CHF 100.00</div>
+                <div>bis 30 km Fahrweg</div><div class="price">CHF 130.00</div>
+                <div>Nachkontrolle innert 12 Wochen</div><div class="price">CHF 110.00</div>
+                <div>bis 40 km Fahrweg</div><div class="price">CHF 140.00</div>
+                <div>Nachkontrolle innert 12 Wochen</div><div class="price">CHF 120.00</div>
+                <div>ab 50 km Fahrweg</div><div class="price">CHF 150.00</div>
+                <div>Nachkontrolle innert 12 Wochen</div><div class="price">CHF 130.00</div>
+                <div>Erstellung eines Fachberichts</div><div class="price">CHF 40.00</div>
+            </div>
+            <p class="note">* Darin enthalten sind auch Kombinationen mit anderen Therapieformen.</p>
         </div>
 
-        <div class="col box">
+        <div class="box">
+            <h3>Longentraining mit physiotherapeutischen Übungen</h3>
+            <div class="price-list">
+                <div>bis 20 km Fahrweg</div><div class="price">CHF 70.00</div>
+                <div>bis 30 km Fahrweg</div><div class="price">CHF 80.00</div>
+                <div>bis 40 km Fahrweg</div><div class="price">CHF 90.00</div>
+                <div>ab 50 km Fahrweg</div><div class="price">CHF 100.00</div>
+            </div>
+        </div>
+
+        <div class="box">
+            <h3>Taping</h3>
+            <p><strong>Ab CHF 40.00</strong>: nach Aufwand und Verbrauch von Material</p>
+        </div>
+
+        <div class="box">
+            <h3>Tierkommunikation <small>(nicht nur für dein Pferd natürlich)</small></h3>
+            <p><strong>Ab CHF 40.00</strong>: nach Aufwand</p>
+        </div>
+
+        <div class="box">
+            <h3>Für dein Pferd und dich</h3>
+            <h3>Pferdeosteopathie und Dorn-Breuss-Therapie (Kombi)</h3>
+            <div class="price-list">
+                <div>bis 20 km Fahrweg</div><div class="price">CHF 220.00</div>
+                <div>Nachkontrolle innert 12 Wochen</div><div class="price">CHF 200.00</div>
+                <div>bis 30 km Fahrweg</div><div class="price">CHF 230.00</div>
+                <div>Nachkontrolle innert 12 Wochen</div><div class="price">CHF 210.00</div>
+                <div>bis 40 km Fahrweg</div><div class="price">CHF 240.00</div>
+                <div>Nachkontrolle innert 12 Wochen</div><div class="price">CHF 220.00</div>
+                <div>ab 50 km Fahrweg</div><div class="price">CHF 250.00</div>
+                <div>Nachkontrolle innert 12 Wochen</div><div class="price">CHF 230.00</div>
+                <div>Erstellung eines Fachberichts</div><div class="price">CHF 40.00</div>
+            </div>
+        </div>
+
+        <div class="box">
+            <h3>Cranio-Sacral-Therapie, Kinesiologie sowie weitere Therapieformen</h3>
+            <p>Myofasziales Strömen, Diaphragma, Lymphdrainage etc., als Einzeltherapie angewandt:</p>
+            <div class="price-list">
+                <div>bis 20 km Fahrweg</div><div class="price">CHF 100.00</div>
+                <div>bis 30 km Fahrweg</div><div class="price">CHF 110.00</div>
+                <div>bis 40 km Fahrweg</div><div class="price">CHF 120.00</div>
+                <div>ab 50 km Fahrweg</div><div class="price">CHF 130.00</div>
+                <div>Erstellung einer kurzen Zusammenfassung</div><div class="price">CHF 20.00</div>
+            </div>
+        </div>
+
+        <div class="box">
+            <h3>Bachblütenmischungen (kinesiologisch ausgetestet)</h3>
+            <p><strong>Ab CHF 20.00</strong> und auf Anfrage</p>
+        </div>
+
+        <div class="box">
             <h3>Für dich</h3>
-            <ul>
-                <li>Dorn-Breuss-Therapie</li>
-                <li>Kinesiologie</li>
-                <li>CranioSacralTherapie</li>
-            </ul>
+            <h3>Dorn-Breuss-Therapie</h3>
+            <div class="price-list">
+                <div>Bei mir zu Hause</div><div class="price">CHF 90.00</div>
+                <div>Bei dir zu Hause (je nach Fahrweg)</div><div class="price">CHF 100.00 bis CHF 130.00</div>
+            </div>
         </div>
-    </div>
-
-    <div class="box">
-        <h3>Weitere Angebote (nicht abschliessend)</h3>
-        <ul>
-            <li>Myofasziales Strömen nach Maike Knifka</li>
-            <li>Diaphragma-Therapie</li>
-            <li>Tierkommunikation</li>
-        </ul>
-    </div>
-</section>
-
-<!-- AUSBILDUNG -->
-<section class="section container">
-    <h2>Ausbildungen</h2>
-    <div class="box">
-        <ul>
-            <li>Biomechanik-Kurse bei Barbara Gerber</li>
-            <li>Tapingkurse bei Rösmi Aeschlimann</li>
-            <li>2-jährige Kinesiologieausbildung bei Ruth Jaun</li>
-            <li>Dorn-Breuss-Kurse bei Gerbhard Bürke</li>
-            <li>27-monatige Ausbildung zur Pferdeosteopathin bei Maike Knifka</li>
-        </ul>
-    </div>
-</section>
-
-<!-- KONTAKT -->
-<section class="section container">
-    <h2>Kontakt</h2>
-    <div class="box">
-        <p><strong>Martina Etter</strong></p>
-        <p>Lützelflühstrasse 32<br>3508 Arni</p>
-        <p>079 664 61 70</p>
-        <p>info@equispina.ch</p>
-    </div>
-</section>
-
-<footer>
-    Für alle Therapieangebote bin ich mobil unterwegs.
-</footer>
+    </section>
+</main>
 
 </body>
 </html>
